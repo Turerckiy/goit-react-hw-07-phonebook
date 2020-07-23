@@ -1,6 +1,6 @@
 import React from "react";
 import ContactListItem from "./ContactListItem";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 const style = {
   padding: "10px",
   display: "flex",
@@ -13,26 +13,13 @@ const style = {
   backgroundColor: "black",
 };
 
-const ContactList = (props) => {
-  const { clients, filteredContacts } = props;
-  return filteredContacts.length === 0
-    ? clients.map((client) => (
-        <div className={style} key={client.id}>
-          <ContactListItem client={client} />
-        </div>
-      ))
-    : filteredContacts.map((client) => (
-        <div className={style} key={client.id}>
-          <ContactListItem client={client} />
-        </div>
-      ));
-};
+const ContactList = () => {
+  const contactArr = useSelector((state) => state.addContact);
 
-const mapStateToProps = (state) => {
-  return {
-    clients: state.appReducer.appReducer,
-    filteredContacts: state.appReducer.filteredReducer,
-  };
+  return contactArr.map((contact) => (
+    <div className={style} key={contact.id}>
+      <ContactListItem contact={contact} />
+    </div>
+  ));
 };
-
-export default connect(mapStateToProps)(ContactList);
+export default ContactList;

@@ -1,17 +1,18 @@
 import React from "react";
-import { connect } from "react-redux";
-import { delComponent } from "../redux/actions/actions";
+import { useDispatch } from "react-redux";
+import operations from "../redux/operations/operations";
+const BntFormDelete = ({ id }) => {
 
-const BntFormDelete = ({ contacts, id, onDelComponent }) => {
+  // const state = useSelector((state) => state.addContact);
+  const dispatch = useDispatch();
+
   return (
     <button
       style={{ margin: 10, width: 50, height: 25, border: "2px dotted white" }}
-      onClick={() => onDelComponent(contacts, id)}
+      onClick={() => dispatch(operations.deleteContacts(id))}
     >
       Delete
     </button>
   );
 };
-const mapStateToProps = (state) => ({contacts: state.appReducer});
-
-export default connect(mapStateToProps, {onDelComponent: delComponent})(BntFormDelete);
+export default BntFormDelete;

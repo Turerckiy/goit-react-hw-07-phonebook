@@ -1,6 +1,6 @@
 import React from "react";
 import BntFormDelete from "../Buttons/BntFormDelete";
-const ContactListItem = ({ client: { id, name, phone } }) => {
+const ContactListItem = ({ contact: { id, name, phone } }) => {
   // console.log('idContactListItem', id)
   return (
     <p className="clientName">

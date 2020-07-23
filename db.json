@@ -1,3 +1,29 @@
 {
-  "contacts": []
+  "contacts": [
+    {
+      "id": "323423r",
+      "name": "Rosie Simpson",
+      "phone": "459-12-56"
+    },
+    {
+      "id": "iwrwe2",
+      "name": "Hermione Kline",
+      "phone": "443-89-12"
+    },
+    {
+      "id": "ir43d-3",
+      "name": "Eden Clements",
+      "phone": "645-17-79"
+    },
+    {
+      "id": "idwer-4",
+      "name": "Annie Copeland",
+      "phone": "227-91-26"
+    },
+    {
+      "name": "222qas",
+      "phone": "12223",
+      "id": "BamiH8f"
+    }
+  ]
 }
